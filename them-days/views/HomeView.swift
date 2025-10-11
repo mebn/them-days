@@ -32,12 +32,12 @@ struct HomeView: View {
                     Text("Tap **Add** to create your first counter")
                 } else {
                     List(counterItems) { item in
-                        HStack {
+                        VStack(alignment: .leading) {
                             Text(item.title)
-                            Spacer()
+                                .font(.title3)
+                                .bold()
                             Text(relativeTimeString(for: item.date))
                         }
-                        .contentShape(Rectangle())
                         .onTapGesture {
                             activeCounter = item
                             showingSheet = true
@@ -84,5 +84,5 @@ struct HomeView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: CounterItem.self, inMemory: true)
+        .modelContainer(for: CounterItem.self)
 }

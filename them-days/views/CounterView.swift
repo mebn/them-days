@@ -34,28 +34,27 @@ struct CounterView: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Title", text: $title)
-                
-                HStack {
-                    DatePicker("Date", selection: $counterDate, displayedComponents: .date)
-                        .datePickerStyle(.compact)
+                Section("About") {
+                    TextField("Title", text: $title)
                     
-                    DatePicker("", selection: $counterDate, displayedComponents: .hourAndMinute)
-                        .datePickerStyle(.compact)
-                        .labelsHidden()
+                    DatePicker("Date and time", selection: $counterDate)
+
                 }
 
-                if isEditing {
-                    Section {
-                        Button("Reset") {
-                            resetFields()
-                        }
+                Section {
+                    if isEditing {
+                        Section {
+                            Button("Reset") {
+                                resetFields()
+                            }
 
-                        Button("Delete", role: .destructive) {
-                            deleteCounter()
+                            Button("Delete", role: .destructive) {
+                                deleteCounter()
+                            }
                         }
                     }
                 }
+                
             }
             .navigationTitle(isEditing ? "Edit Counter" : "New Counter")
             .toolbar {
@@ -108,7 +107,7 @@ struct CounterView: View {
     }
 }
 
+
 #Preview {
-    ContentView()
-        .modelContainer(for: CounterItem.self, inMemory: true)
+    CounterView()
 }

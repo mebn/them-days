@@ -19,6 +19,5 @@ struct SettingView: View {
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: CounterItem.self, inMemory: true)
+    SettingView()
 }
