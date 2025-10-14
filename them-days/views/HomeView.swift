@@ -5,9 +5,9 @@
 //  Created by Marcus Nilszén on 2025-10-09.
 //
 
-import SwiftUI
-import SwiftData
 import Combine
+import SwiftData
+import SwiftUI
 
 struct HomeView: View {
     @State private var showingSheet = false
@@ -23,6 +23,7 @@ struct HomeView: View {
         formatter.includesTimeRemainingPhrase = false
         return formatter
     }()
+
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
@@ -69,7 +70,8 @@ struct HomeView: View {
         let absoluteInterval = abs(interval)
 
         guard absoluteInterval >= 1,
-              let formatted = componentsFormatter.string(from: absoluteInterval) else {
+              let formatted = componentsFormatter.string(from: absoluteInterval)
+        else {
             return "just now"
         }
 
@@ -83,6 +85,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: CounterItem.self)
+    HomeView()
 }

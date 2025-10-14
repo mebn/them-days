@@ -5,8 +5,8 @@
 //  Created by Marcus Nilszén on 2025-10-09.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
@@ -16,7 +16,7 @@ struct ContentView: View {
             Tab("Home", systemImage: "house.fill") {
                 HomeView()
             }
-            
+
             Tab("Settings", systemImage: "gearshape.fill") {
                 SettingView()
             }
@@ -26,5 +26,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: CounterItem.self, inMemory: true)
+        .modelContainer(for: CounterItem.self)
 }

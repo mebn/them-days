@@ -5,8 +5,8 @@
 //  Created by Marcus Nilszén on 2025-10-09.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct CounterView: View {
     @Environment(\.dismiss) private var dismiss
@@ -30,15 +30,14 @@ struct CounterView: View {
         _title = State(initialValue: counter?.title ?? "")
         _counterDate = State(initialValue: counter?.date ?? Date())
     }
-    
+
     var body: some View {
         NavigationStack {
             Form {
                 Section("About") {
                     TextField("Title", text: $title)
-                    
-                    DatePicker("Date and time", selection: $counterDate)
 
+                    DatePicker("Date and time", selection: $counterDate)
                 }
 
                 Section {
@@ -54,7 +53,6 @@ struct CounterView: View {
                         }
                     }
                 }
-                
             }
             .navigationTitle(isEditing ? "Edit Counter" : "New Counter")
             .toolbar {
@@ -106,7 +104,6 @@ struct CounterView: View {
         dismiss()
     }
 }
-
 
 #Preview {
     CounterView()

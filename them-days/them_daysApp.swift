@@ -5,8 +5,8 @@
 //  Created by Marcus Nilszén on 2025-10-09.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct them_daysApp: App {

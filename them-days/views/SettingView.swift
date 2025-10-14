@@ -5,15 +5,14 @@
 //  Created by Marcus Nilszén on 2025-10-09.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct SettingView: View {
-    
     var body: some View {
         NavigationStack {
             Text("hello from setting")
-            .navigationTitle("Setting")
+                .navigationTitle("Setting")
         }
     }
 }
