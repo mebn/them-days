@@ -6,22 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		0EA4B8F92E9E4EBD0034A96A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA4B8F82E9E4EBC0034A96A /* WidgetKit.framework */; };
-		0EA4B8FB2E9E4EBD0034A96A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA4B8FA2E9E4EBD0034A96A /* SwiftUI.framework */; };
-		0EA4B90C2E9E4EC10034A96A /* them-daysWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0EA4B8F62E9E4EBC0034A96A /* them-daysWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0EA4B90A2E9E4EC10034A96A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0EA4B8982E9804B10034A96A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0EA4B8F52E9E4EBC0034A96A;
-			remoteInfo = "them-daysWidgetExtension";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		0EA4B9112E9E4EC10034A96A /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -29,7 +13,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				0EA4B90C2E9E4EC10034A96A /* them-daysWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,34 +20,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0EA4B8A02E9804B10034A96A /* them-days.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "them-days.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EA4B8F62E9E4EBC0034A96A /* them-daysWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "them-daysWidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EA4B8A02E9804B10034A96A /* themDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = themDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA4B8F82E9E4EBC0034A96A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		0EA4B8FA2E9E4EBD0034A96A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0EA4B90D2E9E4EC10034A96A /* Exceptions for "them-daysWidget" folder in "them-daysWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 0EA4B8F52E9E4EBC0034A96A /* them-daysWidgetExtension */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0EA4B8A22E9804B10034A96A /* them-days */ = {
+		0EA4B8A22E9804B10034A96A /* themDays */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "them-days";
-			sourceTree = "<group>";
-		};
-		0EA4B8FC2E9E4EBD0034A96A /* them-daysWidget */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				0EA4B90D2E9E4EC10034A96A /* Exceptions for "them-daysWidget" folder in "them-daysWidgetExtension" target */,
-			);
-			path = "them-daysWidget";
+			path = themDays;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -77,23 +41,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0EA4B8F32E9E4EBC0034A96A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0EA4B8FB2E9E4EBD0034A96A /* SwiftUI.framework in Frameworks */,
-				0EA4B8F92E9E4EBD0034A96A /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0EA4B8972E9804B10034A96A = {
 			isa = PBXGroup;
 			children = (
-				0EA4B8A22E9804B10034A96A /* them-days */,
-				0EA4B8FC2E9E4EBD0034A96A /* them-daysWidget */,
+				0EA4B8A22E9804B10034A96A /* themDays */,
 				0EA4B8F72E9E4EBC0034A96A /* Frameworks */,
 				0EA4B8A12E9804B10034A96A /* Products */,
 			);
@@ -102,8 +56,7 @@
 		0EA4B8A12E9804B10034A96A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0EA4B8A02E9804B10034A96A /* them-days.app */,
-				0EA4B8F62E9E4EBC0034A96A /* them-daysWidgetExtension.appex */,
+				0EA4B8A02E9804B10034A96A /* themDays.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0EA4B89F2E9804B10034A96A /* them-days */ = {
+		0EA4B89F2E9804B10034A96A /* themDays */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0EA4B8C32E9804B50034A96A /* Build configuration list for PBXNativeTarget "them-days" */;
+			buildConfigurationList = 0EA4B8C32E9804B50034A96A /* Build configuration list for PBXNativeTarget "themDays" */;
 			buildPhases = (
 				0EA4B89C2E9804B10034A96A /* Sources */,
 				0EA4B89D2E9804B10034A96A /* Frameworks */,
@@ -132,39 +85,16 @@
 			buildRules = (
 			);
 			dependencies = (
-				0EA4B90B2E9E4EC10034A96A /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				0EA4B8A22E9804B10034A96A /* them-days */,
+				0EA4B8A22E9804B10034A96A /* themDays */,
 			);
-			name = "them-days";
+			name = themDays;
 			packageProductDependencies = (
 			);
 			productName = "them-days";
-			productReference = 0EA4B8A02E9804B10034A96A /* them-days.app */;
+			productReference = 0EA4B8A02E9804B10034A96A /* themDays.app */;
 			productType = "com.apple.product-type.application";
-		};
-		0EA4B8F52E9E4EBC0034A96A /* them-daysWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0EA4B90E2E9E4EC10034A96A /* Build configuration list for PBXNativeTarget "them-daysWidgetExtension" */;
-			buildPhases = (
-				0EA4B8F22E9E4EBC0034A96A /* Sources */,
-				0EA4B8F32E9E4EBC0034A96A /* Frameworks */,
-				0EA4B8F42E9E4EBC0034A96A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				0EA4B8FC2E9E4EBD0034A96A /* them-daysWidget */,
-			);
-			name = "them-daysWidgetExtension";
-			packageProductDependencies = (
-			);
-			productName = "them-daysWidgetExtension";
-			productReference = 0EA4B8F62E9E4EBC0034A96A /* them-daysWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -179,12 +109,9 @@
 					0EA4B89F2E9804B10034A96A = {
 						CreatedOnToolsVersion = 16.4;
 					};
-					0EA4B8F52E9E4EBC0034A96A = {
-						CreatedOnToolsVersion = 16.4;
-					};
 				};
 			};
-			buildConfigurationList = 0EA4B89B2E9804B10034A96A /* Build configuration list for PBXProject "them-days" */;
+			buildConfigurationList = 0EA4B89B2E9804B10034A96A /* Build configuration list for PBXProject "themDays" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -198,21 +125,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0EA4B89F2E9804B10034A96A /* them-days */,
-				0EA4B8F52E9E4EBC0034A96A /* them-daysWidgetExtension */,
+				0EA4B89F2E9804B10034A96A /* themDays */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0EA4B89E2E9804B10034A96A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0EA4B8F42E9E4EBC0034A96A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -229,22 +148,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0EA4B8F22E9E4EBC0034A96A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0EA4B90B2E9E4EC10034A96A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0EA4B8F52E9E4EBC0034A96A /* them-daysWidgetExtension */;
-			targetProxy = 0EA4B90A2E9E4EC10034A96A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0EA4B8C12E9804B50034A96A /* Debug */ = {
@@ -378,14 +282,15 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anon.them-days";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anon.themDays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -405,67 +310,16 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anon.them-days";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anon.themDays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		0EA4B90F2E9E4EC10034A96A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "them-daysWidget/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "them-daysWidget";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anon.them-days.them-daysWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		0EA4B9102E9E4EC10034A96A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "them-daysWidget/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "them-daysWidget";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anon.them-days.them-daysWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -475,7 +329,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0EA4B89B2E9804B10034A96A /* Build configuration list for PBXProject "them-days" */ = {
+		0EA4B89B2E9804B10034A96A /* Build configuration list for PBXProject "themDays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EA4B8C12E9804B50034A96A /* Debug */,
@@ -484,20 +338,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0EA4B8C32E9804B50034A96A /* Build configuration list for PBXNativeTarget "them-days" */ = {
+		0EA4B8C32E9804B50034A96A /* Build configuration list for PBXNativeTarget "themDays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EA4B8C42E9804B50034A96A /* Debug */,
 				0EA4B8C52E9804B50034A96A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0EA4B90E2E9E4EC10034A96A /* Build configuration list for PBXNativeTarget "them-daysWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0EA4B90F2E9E4EC10034A96A /* Debug */,
-				0EA4B9102E9E4EC10034A96A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

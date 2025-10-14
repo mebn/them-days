@@ -1,5 +1,5 @@
 //
-//  them_daysApp.swift
+//  themDaysApp.swift
 //  them-days
 //
 //  Created by Marcus Nilszén on 2025-10-09.
