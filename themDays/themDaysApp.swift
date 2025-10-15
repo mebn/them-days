@@ -14,7 +14,12 @@ struct them_daysApp: App {
         let schema = Schema([
             CounterItem.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+        let modelConfiguration = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false,
+            groupContainer: .identifier("group.com.anon.themDays")
+        )
 
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])

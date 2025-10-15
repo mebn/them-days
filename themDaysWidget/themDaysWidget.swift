@@ -5,6 +5,7 @@
 //  Created by Marcus Nilszén on 2025-10-14.
 //
 
+import SwiftData
 import SwiftUI
 import WidgetKit
 
@@ -18,22 +19,9 @@ struct Provider: AppIntentTimelineProvider {
     }
 
     func timeline(for configuration: ConfigurationAppIntent, in _: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
-
-        return Timeline(entries: entries, policy: .atEnd)
+        let entry = SimpleEntry(date: Date(), configuration: configuration)
+        return Timeline(entries: [entry], policy: .never)
     }
-
-//    func relevances() async -> WidgetRelevances<ConfigurationAppIntent> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
 }
 
 struct SimpleEntry: TimelineEntry {
@@ -45,12 +33,16 @@ struct themDaysWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
+        if let counter = entry.configuration.counterItem {
+            VStack {
+                Text("Title:")
+                Text(counter.counterTitle)
 
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+                Text("Date:")
+                Text(counter.counterDate)
+            }
+        } else {
+            Text("Add a new counter in the app")
         }
     }
 }
@@ -61,21 +53,24 @@ struct themDaysWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             themDaysWidgetEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+                .containerBackground(.background, for: .widget)
         }
     }
 }
 
 private extension ConfigurationAppIntent {
-    static var smiley: ConfigurationAppIntent {
+    static var item: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
+        intent.counterItem = CounterItemEntity(
+            id: "test",
+            counterTitle: "A title!",
+            counterDate: "24 min ago"
+        )
         return intent
     }
 
-    static var starEyes: ConfigurationAppIntent {
+    static var noItem: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
         return intent
     }
 }
@@ -83,6 +78,6 @@ private extension ConfigurationAppIntent {
 #Preview(as: .systemSmall) {
     themDaysWidget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    SimpleEntry(date: .now, configuration: .item)
+    SimpleEntry(date: .now, configuration: .noItem)
 }
