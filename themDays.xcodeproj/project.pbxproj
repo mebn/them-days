@@ -44,6 +44,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0E7BD8322EA7DCC800C60F5B /* Exceptions for "shared" folder in "themDaysWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				timeDifference.swift,
+			);
+			target = 0ED021F62E9EC07600887902 /* themDaysWidgetExtension */;
+		};
 		0ED022072E9EC07800887902 /* Exceptions for "themDaysWidget" folder in "themDaysWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -61,6 +68,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		0E7BD82B2EA7DC9B00C60F5B /* shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0E7BD8322EA7DCC800C60F5B /* Exceptions for "shared" folder in "themDaysWidgetExtension" target */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
 		0EA4B8A22E9804B10034A96A /* themDays */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -106,6 +121,7 @@
 				0ED021FA2E9EC07600887902 /* themDaysWidget */,
 				0EA4B8F72E9E4EBC0034A96A /* Frameworks */,
 				0EA4B8A12E9804B10034A96A /* Products */,
+				0E7BD82B2EA7DC9B00C60F5B /* shared */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +161,7 @@
 				0ED022052E9EC07800887902 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				0E7BD82B2EA7DC9B00C60F5B /* shared */,
 				0EA4B8A22E9804B10034A96A /* themDays */,
 			);
 			name = themDays;

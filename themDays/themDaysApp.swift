@@ -7,9 +7,12 @@
 
 import SwiftData
 import SwiftUI
+import WidgetKit
 
 @main
 struct them_daysApp: App {
+    @Environment(\.scenePhase) private var scenePhase
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             CounterItem.self,
@@ -31,6 +34,11 @@ struct them_daysApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onChange(of: scenePhase) { _, newPhase in
+                    if newPhase == .active || newPhase == .background {
+                        WidgetCenter.shared.reloadTimelines(ofKind: "themDaysWidget")
+                    }
+                }
         }
         .modelContainer(sharedModelContainer)
     }

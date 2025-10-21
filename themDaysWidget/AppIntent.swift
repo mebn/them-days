@@ -20,15 +20,15 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
 struct CounterItemEntity: AppEntity {
     var id: String
     var counterTitle: String
-    var counterDate: String
+    var counterDate: Date
 
     init(model: CounterItem) {
-        self.id = model.id
-        self.counterTitle = model.title
-        self.counterDate = model.date.formatted()
+        id = model.id
+        counterTitle = model.title
+        counterDate = model.date
     }
 
-    init(id: String, counterTitle: String, counterDate: String) {
+    init(id: String, counterTitle: String, counterDate: Date) {
         self.id = id
         self.counterTitle = counterTitle
         self.counterDate = counterDate
@@ -41,7 +41,8 @@ struct CounterItemEntity: AppEntity {
     }
 
     var displayRepresentation: DisplayRepresentation {
-        DisplayRepresentation(title: "\(counterTitle)")
+        let subtitle = counterDate.formatted(date: .abbreviated, time: .shortened)
+        return DisplayRepresentation(title: "\(counterTitle)", subtitle: "\(subtitle)")
     }
 }
 

@@ -11,7 +11,7 @@ import WidgetKit
 
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in _: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+        SimpleEntry(date: Date(), configuration: .init())
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in _: Context) async -> SimpleEntry {
@@ -19,8 +19,55 @@ struct Provider: AppIntentTimelineProvider {
     }
 
     func timeline(for configuration: ConfigurationAppIntent, in _: Context) async -> Timeline<SimpleEntry> {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
-        return Timeline(entries: [entry], policy: .never)
+        let now = Date()
+        guard let counter = configuration.counterItem else {
+            let entry = SimpleEntry(date: now, configuration: configuration)
+            let reloadDate = Calendar.current.date(byAdding: .hour, value: 1, to: now) ?? now.addingTimeInterval(3600)
+            return Timeline(entries: [entry], policy: .after(reloadDate))
+        }
+
+        var entries: [SimpleEntry] = []
+        var currentDate = now
+        let horizon = now.addingTimeInterval(48 * 3600)
+
+        for _ in 0 ..< 48 {
+            entries.append(SimpleEntry(date: currentDate, configuration: configuration))
+
+            guard let nextDate = nextUpdateDate(after: currentDate, counterDate: counter.counterDate) else {
+                break
+            }
+
+            if nextDate > horizon {
+                break
+            }
+
+            currentDate = nextDate
+        }
+
+        if entries.isEmpty {
+            entries.append(SimpleEntry(date: now, configuration: configuration))
+        }
+
+        let reloadDate = entries.last?.date.addingTimeInterval(3600) ?? now.addingTimeInterval(3600)
+        return Timeline(entries: entries, policy: .after(reloadDate))
+    }
+
+    private func nextUpdateDate(after date: Date, counterDate: Date) -> Date? {
+        let interval = date.timeIntervalSince(counterDate)
+        let hour: TimeInterval = 3600
+        let absolute = abs(interval)
+
+        let remainder = absolute.truncatingRemainder(dividingBy: hour)
+
+        let secondsUntilBoundary: TimeInterval
+        if interval >= 0 {
+            secondsUntilBoundary = remainder == 0 ? hour : hour - remainder
+        } else {
+            secondsUntilBoundary = remainder == 0 ? hour : remainder
+        }
+
+        let nextInterval = max(1, min(secondsUntilBoundary, hour))
+        return date.addingTimeInterval(nextInterval)
     }
 }
 
@@ -35,11 +82,8 @@ struct themDaysWidgetEntryView: View {
     var body: some View {
         if let counter = entry.configuration.counterItem {
             VStack {
-                Text("Title:")
                 Text(counter.counterTitle)
-
-                Text("Date:")
-                Text(counter.counterDate)
+                Text(TimeDifference.widgetRelativeString(for: counter.counterDate, referenceDate: entry.date))
             }
         } else {
             Text("Add a new counter in the app")
@@ -64,7 +108,7 @@ private extension ConfigurationAppIntent {
         intent.counterItem = CounterItemEntity(
             id: "test",
             counterTitle: "A title!",
-            counterDate: "24 min ago"
+            counterDate: Date().addingTimeInterval(-90 * 24 * 3600)
         )
         return intent
     }
